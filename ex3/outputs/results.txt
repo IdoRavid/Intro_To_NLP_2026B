@@ -1,0 +1,64 @@
+Model                                         |  Known err | Unknown err | Total err
+------------------------------------------------------------------------------------
+Most likely tag baseline                      |     0.0704 |      0.7500 |    0.1481
+Bigram HMM MLE                                |     0.0471 |      0.7500 |    0.1274
+Bigram HMM Add-one emissions                  |     0.1453 |      0.7124 |    0.2101
+Bigram HMM pseudo-words + MLE                 |     0.0782 |      0.3348 |    0.1075
+Bigram HMM pseudo-words + Add-one             |     0.1451 |      0.3671 |    0.1704
+
+Detailed counts:
+
+Most likely tag baseline
+  known_error_rate: 0.0704463480613165
+  unknown_error_rate: 0.75
+  total_error_rate: 0.14806309904153356
+  known_errors: 625
+  known_total: 8872
+  unknown_errors: 858
+  unknown_total: 1144
+  total_errors: 1483
+  total_tokens: 10016
+
+Bigram HMM MLE
+  known_error_rate: 0.047114517583408476
+  unknown_error_rate: 0.75
+  total_error_rate: 0.1273961661341853
+  known_errors: 418
+  known_total: 8872
+  unknown_errors: 858
+  unknown_total: 1144
+  total_errors: 1276
+  total_tokens: 10016
+
+Bigram HMM Add-one emissions
+  known_error_rate: 0.14528854824165915
+  unknown_error_rate: 0.7124125874125874
+  total_error_rate: 0.21006389776357828
+  known_errors: 1289
+  known_total: 8872
+  unknown_errors: 815
+  unknown_total: 1144
+  total_errors: 2104
+  total_tokens: 10016
+
+Bigram HMM pseudo-words + MLE
+  known_error_rate: 0.07822362488728585
+  unknown_error_rate: 0.3347902097902098
+  total_error_rate: 0.1075279552715655
+  known_errors: 694
+  known_total: 8872
+  unknown_errors: 383
+  unknown_total: 1144
+  total_errors: 1077
+  total_tokens: 10016
+
+Bigram HMM pseudo-words + Add-one
+  known_error_rate: 0.14506311992786294
+  unknown_error_rate: 0.36713286713286714
+  total_error_rate: 0.1704273162939297
+  known_errors: 1287
+  known_total: 8872
+  unknown_errors: 420
+  unknown_total: 1144
+  total_errors: 1707
+  total_tokens: 10016

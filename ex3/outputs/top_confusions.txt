@@ -1,0 +1,22 @@
+Most frequent off-diagonal confusion matrix entries
+true_tag	predicted_tag	count
+NN	NP	95
+JJ	NN	55
+NN	JJ	48
+NNS	NN	47
+NP	NN	46
+JJ	NP	36
+VB	NN	29
+NNS	NP	28
+NN	AT	27
+VBN	JJ	27
+VBN	VBD	23
+RB	NP	21
+VBZ	NNS	21
+JJ	VBN	20
+NN	NNS	20
+NPS	NN	20
+RP	IN	20
+TO	IN	20
+VBD	VBN	20
+NP$	NP	18
