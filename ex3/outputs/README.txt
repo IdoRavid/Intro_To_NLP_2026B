@@ -55,9 +55,42 @@ Most frequent errors in the final model
 - true NN, predicted AT: 27 tokens
 - true VBN, predicted JJ: 27 tokens
 
+Models explanations
+------------------
+Most likely tag baseline:
+This model assigns each known word its most frequent tag in the training set.
+For unknown words, it always predicts NN, as required in the exercise.
+It performs well on known words, but very poorly on unknown words because it has no way to use word shape or context.
+
+Bigram HMM MLE:
+This model uses both emission probabilities and transition probabilities between tags.
+It improves the known-word error because it uses sentence context, not only the word itself.
+However, unknown-word performance stays poor because unseen words are still not handled in an informative way.
+
+Bigram HMM Add-one emissions:
+This model applies Add-one smoothing to the emission probabilities.
+The goal is to avoid zero probabilities for unseen word-tag combinations.
+In practice, this hurt performance because Add-one smoothing spreads probability mass too broadly and weakens useful emission patterns.
+
+Bigram HMM pseudo-words plus MLE:
+This model replaces rare training words and unknown test words with pseudo-word categories.
+This gives the model useful clues from word shape, such as capitalization, digits, suffixes, and hyphens.
+It gives the best total result because it greatly improves unknown-word tagging while still preserving useful HMM context.
+
+Bigram HMM pseudo-words plus Add-one:
+This model combines pseudo-words with Add-one smoothed emissions.
+Although it improves unknown-word handling compared to the basic models, it performs worse than pseudo-words with MLE.
+This suggests that pseudo-words are helpful, but Add-one smoothing over-smooths the emission probabilities in this setting.
+
 Notes
 -----
 - Viterbi decoding was implemented manually.
 - Probabilities are computed in log-space to avoid numerical underflow.
 - Add-one smoothing was applied to emission probabilities.
 - Transition probabilities were estimated by maximum likelihood.
+
+Usage of AI
+-----------
+AI assistance was used during the work on this exercise as a supporting tool.
+It was used to clarify the assignment requirements, understand how to load and process the Brown corpus with NLTK, plan the structure of the implementation, and discuss how to compute and interpret the confusion matrix.
+All code and results were reviewed and tested by us before submission.
